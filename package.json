@@ -1,0 +1,32 @@
+{
+  "name": "project-smartcontracts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "rm -rf build && truffle test",
+    "server": "ganache-cli",
+    "build": "truffle compile",
+    "coverage": "rm -rf build && truffle run coverage",
+    "migrate": "truffle migrate --network ropsten",
+    "docker:test": "docker-compose -p cz-test -f docker-compose.tests.yml up --build",
+    "docker:migrate": "docker-compose -p cz-migrate -f docker-compose.migrate.yml up"
+  },
+  "author": "Rami Moubayed & Juan Riveros",
+  "license": "ISC",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.2.2",
+    "chai": "^4.3.0",
+    "dotenv": "^8.2.0",
+    "prettier": "^2.2.1",
+    "truffle-hdwallet-provider": "0.0.3",
+    "web3-utils": "^1.3.4"
+  },
+  "devDependencies": {
+    "@openzeppelin/test-helpers": "^0.5.10",
+    "solidity-coverage": "^0.7.15"
+  }
+}
